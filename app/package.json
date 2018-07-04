@@ -1,8 +1,14 @@
 {
-  "name": "Test",
-  "version": "1.0.0",
-  "description": "Test app",
-  "main": "js/electronMain.js",
+  "name": "",
+  "main": "index.html",
   "author": "Quasi",
-  "license": "MIT"
+  "license": "MIT",
+  "js-flags": "--expose-gc",
+  "window": {
+      "title": "",
+      "toolbar": false,
+      "width": 816,
+      "height": 624,
+      "icon": "icon/icon.png"
+  }
 }
