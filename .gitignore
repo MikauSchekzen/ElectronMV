@@ -20,3 +20,6 @@ app/js/rpg_sprites.js
 app/js/rpg_windows.js
 
 app/save/winData.rpgsave
+
+# Ignore distribute folder
+/dist
