@@ -31,7 +31,8 @@ function start () {
         height: data.height,
         x: data.x,
         y: data.y,
-        fullscreen: data.fullscreen
+        fullscreen: data.fullscreen,
+        maximized: data.maximized
       });
     }
     if (!winData.width || !winData.height) {
@@ -84,6 +85,24 @@ function createWindow () {
     winData.width  = win.getContentSize()[0];
     winData.height = win.getContentSize()[1];
   });
+  win.on("maximize", () => {
+    winData.maximized = true;
+  });
+  win.on("unmaximize", () => {
+    winData.maximized = false;
+  });
+  win.on("enter-full-screen", () => {
+    winData.fullscreen = true;
+  });
+  win.on("enter-html-full-screen", () => {
+    winData.fullscreen = true;
+  });
+  win.on("leave-full-screen", () => {
+    winData.fullscreen = false;
+  });
+  win.on("leave-html-full-screen", () => {
+    winData.fullscreen = false;
+  });
   win.webContents.openDevTools({
     mode: 'detach'
   });
@@ -91,6 +110,7 @@ function createWindow () {
     win.focus();
   });
   win.setFullScreen(winData.fullscreen || false);
+  if(winData.maximized) win.maximize();
 }
 
 app.on('ready', start);
@@ -108,7 +128,7 @@ app.on('activate', () => {
 });
 
 ipcMain.on('get-WinData', (e) => {
-  e.returnValue = Object.assign({}, winData, { fullscreen: win.isFullScreen() });
+  e.returnValue = Object.assign({}, winData, { fullscreen: win.isFullScreen(), maximized: win.isMaximized() });
 });
 
 ipcMain.on('open-DevTools', () => {

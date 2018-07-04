@@ -1,5 +1,6 @@
 {
   "res": [816, 624],
   "resizable": true,
-  "fullscreen": false
+  "fullscreen": false,
+  "maximized": false
 }
