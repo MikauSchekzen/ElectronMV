@@ -79,10 +79,12 @@ function createWindow () {
     win = null;
   });
   win.on('move', () => {
+    if(win.isMaximized()) return;
     winData.x = win.getPosition()[0];
     winData.y = win.getPosition()[1];
   });
   win.on('resize', () => {
+    if(win.isMaximized()) return;
     winData.width  = win.getContentSize()[0];
     winData.height = win.getContentSize()[1];
   });
