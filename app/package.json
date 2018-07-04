@@ -2,7 +2,7 @@
   "name": "ElectronMV",
   "description": "An RPG Maker MV Game",
   "version": "1.0.0",
-  "main": "js/electronMain.js",
+  "main": "index.html",
   "author": "Quasi",
   "license": "MIT",
   "js-flags": "--expose-gc",

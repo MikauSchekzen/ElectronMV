@@ -11,8 +11,8 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
-    "electron-builder": "^7.18.0",
-    "electron": "^1.4.5"
+    "electron-builder": "^20.19.1",
+    "electron": "^2.0.2"
   },
   "scripts": {
     "start": "electron . --dev",
@@ -37,12 +37,16 @@
         ]
       }
     ],
+    "extraMetadata": {
+      "main": "js/electronMain.js"
+    },
     "win": {
       "target": "dir",
       "icon": "app/icon/icon.ico"
     },
     "linux": {
       "target": "AppImage",
+      "category": "Game",
       "icon": "app/icon/icon.png"
     }
   }
