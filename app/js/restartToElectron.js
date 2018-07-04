@@ -19,7 +19,8 @@ try {
     if(os.platform() === "linux" || os.platform() === "darwin") {
       file = path.join(root, "play.sh");
       emv = spawn(file, {
-        cwd: root
+        cwd: root,
+        env: Object.assign({}, process.env, { DEV: true })
       });
     }
     else if(os.platform() === "win32") {

@@ -52,7 +52,8 @@ function createWindow () {
     useContentSize: true,
     webPreferences: {
       devTools: devMode && process.env.PRODUCTION !== 'true'
-    }
+    },
+    icon: "icon/icon.png"
   });
 
   win.loadURL(url.format({
