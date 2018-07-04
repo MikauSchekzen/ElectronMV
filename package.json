@@ -18,7 +18,8 @@
     "start": "electron . --dev",
     "compile": "babel app -d compiled --copy-files",
     "build-w64": "build -w --x64",
-    "build-w32": "build -w --ia32"
+    "build-w32": "build -w --ia32",
+    "build-linux64": "build -l --x64"
   },
   "build": {
     "appId": "MVGame",
@@ -39,6 +40,10 @@
     "win": {
       "target": "dir",
       "icon": "app/icon/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "app/icon/icon.png"
     }
   }
 }

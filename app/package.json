@@ -1,14 +1,16 @@
 {
-  "name": "",
-  "main": "index.html",
+  "name": "ElectronMV",
+  "description": "An RPG Maker MV Game",
+  "version": "1.0.0",
+  "main": "js/electronMain.js",
   "author": "Quasi",
   "license": "MIT",
   "js-flags": "--expose-gc",
   "window": {
-      "title": "",
-      "toolbar": false,
-      "width": 816,
-      "height": 624,
-      "icon": "icon/icon.png"
+    "title": "",
+    "toolbar": false,
+    "width": 816,
+    "height": 624,
+    "icon": "icon/icon.png"
   }
 }
