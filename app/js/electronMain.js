@@ -64,9 +64,14 @@ function createWindow () {
 
   win.setMenu(null);
   win.setContentSize(winData.width, winData.height);
-  if (!isNaN(winData.x) && !isNaN(winData.y)) {
-    win.setPosition(winData.x, winData.y);
-  }
+
+  let screen = require("electron").screen;
+  let area = screen.getPrimaryDisplay().workArea;
+  let winSize = win.getSize();
+  win.setPosition(Math.floor(area.x + area.width / 2 - winSize[0] / 2), Math.floor(area.y + area.height / 2 - winSize[1] / 2));
+  // if (!isNaN(winData.x) && !isNaN(winData.y)) {
+    // win.setPosition(winData.x, winData.y);
+  // }
   win.once('ready-to-show', () => {
     win.show();
   });
